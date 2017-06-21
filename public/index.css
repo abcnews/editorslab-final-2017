@@ -4,3 +4,8 @@ body {
 
 a {
   color: #00B7FF; }
+
+.Card {
+  margin-bottom: 1rem;
+  border: 1px solid blue;
+  padding: 1rem; }

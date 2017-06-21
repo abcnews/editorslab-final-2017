@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+var db = require('../lib/db');
+var {RESET} = require('../lib/db/statements');
+
+db
+.then(conn => {
+  conn.exec(RESET, err => {
+    if (err) {
+      throw err;
+    }
+  });
+})
+.catch(err => {
+  throw err;
+});
