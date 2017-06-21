@@ -1,11 +1,107 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+@charset "UTF-8";
+@font-face {
+  font-family: 'ABCSans';
+  font-weight: normal;
+  font-style: normal;
+  src: url("http://www.abc.net.au/res/fonts/abcsans/abcsans-regular.woff2") format("woff2"), url("http://www.abc.net.au/res/fonts/abcsans/abcsans-regular.woff") format("woff"); }
 
-a {
-  color: #00B7FF; }
+@font-face {
+  font-family: 'ABCSans';
+  font-weight: normal;
+  font-style: italic;
+  src: url("http://www.abc.net.au/res/fonts/abcsans/abcsans-regularitalic.woff2") format("woff2"), url("http://www.abc.net.au/res/fonts/abcsans/abcsans-regularitalic.woff") format("woff"); }
+
+@font-face {
+  font-family: 'ABCSans';
+  font-weight: bold;
+  font-style: normal;
+  src: url("http://www.abc.net.au/res/fonts/abcsans/abcsans-bold.woff2") format("woff2"), url("http://www.abc.net.au/res/fonts/abcsans/abcsans-bold.woff") format("woff"); }
+
+@font-face {
+  font-family: 'ABCSerif';
+  font-weight: normal;
+  font-style: normal;
+  src: url("http://www.abc.net.au/res/fonts/abcserif/abcserif-regular.woff2") format("woff2"), url("http://www.abc.net.au/res/fonts/abcserif/abcserif-regular.woff") format("woff"); }
+
+@font-face {
+  font-family: 'ABCSerif';
+  font-weight: normal;
+  font-style: italic;
+  src: url("http://www.abc.net.au/res/fonts/abcserif/abcserif-regular_italic.woff2") format("woff2"), url("http://www.abc.net.au/res/fonts/abcserif/abcserif-regular_italic.woff") format("woff"); }
+
+@font-face {
+  font-family: 'ABCSerif';
+  font-weight: bold;
+  font-style: normal;
+  src: url("http://www.abc.net.au/res/fonts/abcserif/abcserif-bold.woff2") format("woff2"), url("http://www.abc.net.au/res/fonts/abcserif/abcserif-bold.woff") format("woff"); }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+html {
+  min-height: 100%;
+  font-size: 16px; }
+
+body {
+  margin: 0; }
+
+.u-richtext {
+  font-family: "Book Antiqua", "Palatino Linotype", Palatino, serif; }
+  .u-richtext > * {
+    margin-top: 0;
+    margin-bottom: 1.5rem; }
+  .u-richtext > :last-child {
+    margin-bottom: 0; }
+
+.Story {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 37.5rem; }
 
 .Card {
-  margin-bottom: 1rem;
-  border: 1px solid blue;
-  padding: 1rem; }
+  font-family: Helvetica, Arial, sans-serif; }
+  .Card button {
+    border: none;
+    padding: 0.875rem;
+    background-color: #3C4447;
+    color: #FFF;
+    font-size: .75rem;
+    font-weight: bold;
+    line-height: 1;
+    text-transform: uppercase; }
+
+.Card-content {
+  border-left: 0.125rem solid #3C4447;
+  padding: 0 0 .375rem .375rem; }
+  .Card.is-collapsed > .Card-content {
+    display: none; }
+  .Card-content > :first-child {
+    margin-top: 0; }
+  .Card-content > :last-child {
+    margin-bottom: 0; }
+
+[class*="Card-controls"] {
+  display: flex;
+  justify-content: space-between; }
+
+.Card.will-collapse > .Card-controls--expanded button {
+  pointer-events: none;
+  color: #C2CACC;
+  font-style: italic; }
+  .Card.will-collapse > .Card-controls--expanded button::before {
+    content: "✔︎ "; }
+
+.Card.is-collapsed > .Card-controls--expanded {
+  display: none; }
+
+.Story.has-familiar-user .Card-controls--expanded a {
+  display: none; }
+
+.Card.is-expanded > .Card-controls--collapsed {
+  display: none; }
+
+.Card-controls--collapsed button {
+  background-color: #A8E2EF;
+  color: #3C4447; }

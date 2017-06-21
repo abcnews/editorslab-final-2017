@@ -1,4 +1,8 @@
+const idbKeyval = require('idb-keyval');
+const Card = require('./components/Card');
+
 const slice = arr => Array.prototype.slice.call(arr);
+const qs = document.querySelector.bind(document);
 const qsa = document.querySelectorAll.bind(document);
 
 const refs = slice(qsa('[data-card]')).reduce((memo, el) => {
@@ -14,12 +18,16 @@ fetch(cardsURL)
   response.json().then(cards => {
     cards.forEach(card => {
       const refEl = refs[card.slug];
-      const cardEl = document.createElement('div');
-
-      cardEl.className = 'Card';
-      cardEl.innerHTML = card.text;
-
-      refEl.parentElement.insertBefore(cardEl, refEl);
-    })
+     
+      refEl.parentElement.insertBefore(Card(card), refEl);
+    });
   });
+});
+
+idbKeyval.keys().then(keys => {
+  const numCollapsedCards = keys.filter(key => key.indexOf('card-') > -1).length;
+
+  if (numCollapsedCards > 2) {
+    qs('.Story').classList.add('has-familiar-user');
+  }
 });

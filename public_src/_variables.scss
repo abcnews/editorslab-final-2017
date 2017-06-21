@@ -1,0 +1,16 @@
+$rem: 16px;
+
+$color-blue: #A8E2EF;
+$color-black: #333;
+$color-grey: #3C4447;
+$color-lightgrey: #C2CACC;
+$color-white: #FFF;
+
+$url-fonts-root: 'http://www.abc.net.au/res/fonts/';
+$url-font-sans: '#{$url-fonts-root}abcsans/abcsans';
+$url-font-serif: '#{$url-fonts-root}abcserif/abcserif';
+
+// $font-sans: "ABCSans", Helvetica, Arial, sans-serif;
+$font-sans: Helvetica, Arial, sans-serif;
+// $font-serif: "ABCSerif", "Book Antiqua", "Palatino Linotype", Palatino, serif;
+$font-serif: "Book Antiqua", "Palatino Linotype", Palatino, serif;
