@@ -31,12 +31,13 @@
 
 @keyframes toast {
     0% {
+        opacity: 1;
         transform: translate(0, 102%);
     }
-    5% {
+    10% {
         transform: none;
     }
-    85% {
+    80% {
         opacity: 1;
     }
     100% {

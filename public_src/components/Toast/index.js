@@ -7,7 +7,7 @@ function Toast(undoFn) {
 
   function open() {
     document.body.appendChild(el);
-    setTimeout(close, 4000);
+    setTimeout(close, 3000);
   }
 
   function undo() {

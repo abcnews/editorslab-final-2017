@@ -1,14 +1,16 @@
 .Toast {
+  opacity: 0;
   position: fixed;
+  right: 0;
   bottom: 0;
-  left: 0;
   padding: 1rem 5rem 1rem 1rem;
-  width: 100%;
+  width: 22rem;
+  max-width: 100%;
   background-color: $color-darkblue;
   color: $color-white;
   font-family: $font-sans;
   font-size: 1rem;
-  animation: toast 4s;
+  animation: toast 3s;
   will-change: opacity;
 
   button {

@@ -57,10 +57,11 @@
 
 @keyframes toast {
   0% {
+    opacity: 1;
     transform: translate(0, 102%); }
-  5% {
+  10% {
     transform: none; }
-  85% {
+  80% {
     opacity: 1; }
   100% {
     opacity: 0; } }
@@ -280,16 +281,18 @@ html.has-annotation body {
     background-color: #E0F3F7; }
 
 .Toast {
+  opacity: 0;
   position: fixed;
+  right: 0;
   bottom: 0;
-  left: 0;
   padding: 1rem 5rem 1rem 1rem;
-  width: 100%;
+  width: 22rem;
+  max-width: 100%;
   background-color: #477A8A;
   color: #FFF;
   font-family: "ABCSans", Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  animation: toast 4s;
+  animation: toast 3s;
   will-change: opacity; }
   .Toast button {
     position: absolute;
