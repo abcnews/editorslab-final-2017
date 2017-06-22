@@ -15,6 +15,7 @@ html {
 
 body {
   margin: 0;
+  padding-top: 4rem;
 }
 
 .u-richtext {
@@ -37,6 +38,21 @@ body {
   > h3,
   > h4 {
     font-family: $font-sans;
+  }
+}
+
+.Nav {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1c1c1c;
+
+  svg {
+    vertical-align: top;
   }
 }
 
