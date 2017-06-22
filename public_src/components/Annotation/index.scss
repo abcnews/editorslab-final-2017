@@ -3,9 +3,6 @@ html.has-annotation body {
 }
 
 .Annotation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: auto;
   position: fixed;
   top: 2.75rem;
@@ -32,10 +29,14 @@ html.has-annotation body {
 }
 
 .Annotation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 0 auto;
   padding: 1rem;
   width: 100%;
   max-width: 25rem;
+  min-height: 100%;
 }
 
 .Annotation-content {

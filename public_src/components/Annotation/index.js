@@ -3,8 +3,10 @@ const idbKeyval = require('idb-keyval');
 const sanitizeHtml = require('sanitize-html');
 
 const ABOUT_CONTENT = `
-  <h2> What is <em>Manifest</em>?</h2>
-  <p>TODO</p>
+  <h2>What is <em>Manifest</em>?</h2>
+  <p>A key component of what makes reporting long-running and complex news stories difficult is catering to an audience that has varied levels of background knowledge and exposure to the story so far.</p>
+  <p>Because of this, each new article in a long running story will often include a lot of content which is unnecessary for many readers, yet vital to those readers who are new to a story.</p>
+  <p><strong>Manifest</strong> aims to serve stories that have been personalised to the knowledge level of the reader by replacing some background and context which would traditionally be written into new articles with a set of re-usable annotations, backgrounders and breakouts.</p>
 `;
 const SANITIZE_HTML_CONFIG = {
   allowedTags: sanitizeHtml.defaults.allowedTags.concat(['h1', 'h2', 'img'])
