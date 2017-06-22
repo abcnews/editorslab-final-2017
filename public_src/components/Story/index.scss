@@ -2,4 +2,11 @@
   margin: 0 auto;
   padding: 1rem;
   max-width: 37.5rem;
+  transition: .5s opacity;
+  will-change: opacity;
+
+  &.is-hidden {
+    opacity: 0;
+    transition-duration: 0s;
+  }
 }

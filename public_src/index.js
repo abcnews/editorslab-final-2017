@@ -6,6 +6,13 @@ const slice = arr => Array.prototype.slice.call(arr);
 const qs = document.querySelector.bind(document);
 const qsa = document.querySelectorAll.bind(document);
 
+const storyEl = qs('.Story');
+
+storyEl.classList.add('is-hidden');
+setTimeout(() => {
+  storyEl.classList.remove('is-hidden');
+}, 250);
+
 const annotationRefs = slice(qsa('[data-annotation]')).reduce((memo, el) => {
   memo[el.getAttribute('data-annotation')] = el;
 

@@ -85,7 +85,12 @@ body {
 .Story {
   margin: 0 auto;
   padding: 1rem;
-  max-width: 37.5rem; }
+  max-width: 37.5rem;
+  transition: .5s opacity;
+  will-change: opacity; }
+  .Story.is-hidden {
+    opacity: 0;
+    transition-duration: 0s; }
 
 .Card {
   margin-left: -1rem;
@@ -231,10 +236,9 @@ html.has-annotation body {
   font-weight: normal;
   font-style: normal;
   cursor: pointer;
-  transition: filter .125s, -webkit-filter .125s;
+  transition: .25s background-color;
   -webkit-box-decoration-break: clone;
   -o-box-decoration-break: clone;
   box-decoration-break: clone; }
   [data-annotation]:not(.is-removed):hover {
-    filter: brightness(1.05);
-    -webkit-filter: brightness(1.05); }
+    background-color: #A8E2EF; }
