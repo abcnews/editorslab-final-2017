@@ -10,7 +10,7 @@ Ms Fowler said her pathway to promotion was blocked after the incident, and she 
 
 After the essay was posted online earlier this week, it has been shared tens of thousands of times.
 
-Uber's chief executive Travis Kalanick has since taken to Twitter to announce a full investigation.
+Uber's chief executive <a data-annotation="travis-kalanick">Travis Kalanick</a> has since taken to Twitter to announce a full investigation.
 
 "What's described here is abhorrent & against everything we believe in. Anyone who behaves this way or thinks this is OK will be fired [sic]," he tweeted.
 

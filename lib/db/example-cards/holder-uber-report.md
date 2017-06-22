@@ -1,4 +1,4 @@
-<p>Former US Attorney Eric Hoolder's firm Covington &amp; Burling LLP, and a second firm, Perkins Coie, conducted separate examinations of Uber's workplace culture after a former engineer levelled charges of sexual harassment.</p>
+<p>Former US Attorney Eric Holder's firm Covington &amp; Burling LLP, and a second firm, Perkins Coie, conducted separate examinations of Uber's workplace culture after a former engineer levelled charges of sexual harassment.</p>
 <p>Mr Holder's investigators conducted more than 200 interviews with current and former employees, including people who had knowledge of Ms Fowler's allegations, according to the law firm's recommendations .</p>
 <p>Liane Hornsey, Uber's chief human resources officer, said implementing the recommendations "will improve our culture, promote fairness and accountability, and establish processes and systems to ensure the mistakes of the past will not be repeated".</p>
 <p>The report makes it clear Uber was not doing enough to protect workers from sexual harassment and retaliation, noting that company policies need to state directly that such conduct is prohibited.</p>
