@@ -43,16 +43,18 @@ function Card(data, refEl) {
       ${awarenessEl}
       ${contentEl}
       <div class="Card-controls--expanded">
-        <button onclick=${willCollapse}>${data.collapse || 'I\'ve got this'}</button>
+        <button onclick=${willCollapse}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8">
+            <path fill="none" stroke="#FFF" stroke-linecap="square" stroke-width="2" d="M10 6L5.898 2 2 5.8"/>
+          </svg>${data.collapse || 'I\'ve got this'}
+        </button>
         ${aboutEl}
       </div>
       <div class="Card-controls--collapsed">
         <button onclick=${expand}>
-          <span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8">
-              <path fill="none" stroke="#FFF" stroke-linecap="square" stroke-width="2" d="M10 6L5.898 2 2 5.8"/>
-            </svg>
-          </span>
+          <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8">
+            <path fill="none" stroke="#FFF" stroke-linecap="square" stroke-width="2" d="M2.243 2.243l4.1 4 3.9-3.802"/>
+          </svg></span>
           ${data.expand || 'I need some background on this'}</button>
       </div>
     </div>
