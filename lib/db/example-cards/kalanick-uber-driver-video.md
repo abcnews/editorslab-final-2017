@@ -1,4 +1,4 @@
-Uber chief executive Travis Kalanick says it is time for him to "grow up" and get help after a video surfaced of him having an argument with an Uber driver over pay rates.
+Uber chief executive <a data-annotation="travis-kalanick">Travis Kalanick</a> says it is time for him to "grow up" and get help after a video surfaced of him having an argument with an Uber driver over pay rates.
 
 The heated exchange was captured on a dash cam and shows Mr Kalanick, co-founder of the company, arguing with the driver who tells him pay rates have been cut and he has lost money.
 
