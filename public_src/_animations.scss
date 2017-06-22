@@ -16,7 +16,7 @@
     }
 }
 
-@keyframes pop {
+@keyframes tick {
     0% {
         transform: scale(0);
     }
@@ -25,5 +25,21 @@
     }
     100% {
         transform: scale(1.25);
+    }
+}
+
+
+@keyframes toast {
+    0% {
+        transform: translate(0, 102%);
+    }
+    5% {
+        transform: none;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }

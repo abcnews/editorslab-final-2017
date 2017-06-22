@@ -2,6 +2,7 @@ const html = require('bel');
 const idbKeyval = require('idb-keyval');
 const sanitizeHtml = require('sanitize-html');
 const Annotation = require('../Annotation');
+const Toast = require('../Toast');
 
 const slice = arr => Array.prototype.slice.call(arr);
 
@@ -16,7 +17,7 @@ function Card(data, refEl) {
     idbKeyval.set(`card-${data.slug}`, 1);
     el.className = 'Card is-expanded will-collapse';
     document.activeElement.blur();
-    // TODO: Popup
+    Toast(expand);
   }
 
   function expand() {

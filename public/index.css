@@ -47,13 +47,23 @@
   to {
     opacity: 0; } }
 
-@keyframes pop {
+@keyframes tick {
   0% {
     transform: scale(0); }
   75% {
     transform: scale(1.5); }
   100% {
     transform: scale(1.25); } }
+
+@keyframes toast {
+  0% {
+    transform: translate(0, 102%); }
+  5% {
+    transform: none; }
+  85% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 *,
 *::before,
@@ -66,7 +76,7 @@ html {
 
 body {
   margin: 0;
-  padding-top: 4rem; }
+  padding-top: 2.75rem; }
 
 .u-richtext {
   font-size: 1.125rem;
@@ -76,13 +86,15 @@ body {
     margin-bottom: 1.25rem;
     line-height: 1.5; }
   .u-richtext > h1,
-  .u-richtext > h2 {
-    line-height: 1.25; }
-  .u-richtext > h1,
   .u-richtext > h2,
   .u-richtext > h3,
   .u-richtext > h4 {
     font-family: "ABCSans", Helvetica, Arial, sans-serif; }
+  .u-richtext > h1,
+  .u-richtext > h2 {
+    line-height: 1.25; }
+  .u-richtext > h1 {
+    font-size: 2.5rem; }
 
 .Nav {
   display: flex;
@@ -111,7 +123,7 @@ body {
   font-family: "ABCSans", Helvetica, Arial, sans-serif; }
   .Card button {
     border: none;
-    padding: .5625rem .5625rem .5625rem .4375rem;
+    padding: .5625rem;
     background-color: #3C4447;
     color: #FFF;
     font-size: .75rem;
@@ -119,8 +131,6 @@ body {
     line-height: 1;
     text-transform: uppercase;
     cursor: pointer; }
-    .Card button > svg {
-      margin-right: .5rem; }
 
 .Card-awareness {
   padding-left: 1rem; }
@@ -146,7 +156,7 @@ body {
   font-style: italic; }
   .Card.will-collapse > .Card-controls--expanded button::after {
     content: "✔︎";
-    animation: .25s pop;
+    animation: .25s tick;
     display: inline-block;
     margin: 0 .125rem 0 .5rem; }
 
@@ -166,7 +176,7 @@ body {
 
 .Card-controls--collapsed button {
   position: relative;
-  padding: .4375rem .4375rem .4375rem 2.4375rem;
+  padding: .4375rem .4375rem .4375rem 2rem;
   background-color: #E0F3F7;
   color: #3C4447;
   font-size: .875rem;
@@ -268,3 +278,29 @@ html.has-annotation body {
   box-decoration-break: clone; }
   [data-annotation]:not(.is-removed):hover {
     background-color: #E0F3F7; }
+
+.Toast {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1rem 5rem 1rem 1rem;
+  width: 100%;
+  background-color: #477A8A;
+  color: #FFF;
+  font-family: "ABCSans", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  animation: toast 4s;
+  will-change: opacity; }
+  .Toast button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: none;
+    padding: .75rem;
+    background-color: #3C4447;
+    color: #FFF;
+    font-size: .75rem;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    cursor: pointer; }

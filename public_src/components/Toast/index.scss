@@ -1,0 +1,28 @@
+.Toast {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1rem 5rem 1rem 1rem;
+  width: 100%;
+  background-color: $color-darkblue;
+  color: $color-white;
+  font-family: $font-sans;
+  font-size: 1rem;
+  animation: toast 4s;
+  will-change: opacity;
+
+  button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: none;
+    padding: .75rem;
+    background-color: $color-grey;
+    color: $color-white;
+    font-size: .75rem;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}
