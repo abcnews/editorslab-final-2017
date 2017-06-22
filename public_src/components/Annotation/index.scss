@@ -1,0 +1,96 @@
+html.has-annotation body {
+  overflow: hidden;
+}
+
+.Annotation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-grey-transparent;
+  transition: .25s background-color;
+  animation: fadeIn .25s;
+  will-change: opacity;
+
+  svg {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    cursor: pointer;
+  }
+}
+
+.Annotation.is-closing {
+  opacity: 0;
+  pointer-events: none;
+  animation: fadeOut .25s;
+}
+
+.Annotation-container {
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 25rem;
+}
+
+.Annotation-content {
+  filter: #{"invert()"};
+  -webkit-filter: #{"invert()"};
+
+  img,
+  video {
+    filter: #{"invert()"};
+    -webkit-filter: #{"invert()"};
+  }
+}
+
+.Annotation-controls {
+  margin-top: 1rem;
+
+  button {
+    border: none;
+    margin-top: .5rem;
+    padding: .875rem;
+    width: 100%;
+    background-color: $color-blue;
+    color: $color-grey;
+    font-size: .875rem;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  button + button {
+    background-color: $color-lightgrey;
+  }
+}
+
+[data-annotation],
+[data-annotation]:link,
+[data-annotation]:hover,
+[data-annotation]:active,
+[data-annotation]:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+[data-annotation]:not(.is-removed) {
+  padding: .125rem .375rem;
+  background-color: $color-lightblue;
+  font-weight: normal;
+  font-style: normal;
+  cursor: pointer;
+  transition: filter .125s, -webkit-filter .125s;
+  -webkit-box-decoration-break: clone;
+  -o-box-decoration-break: clone;
+  box-decoration-break: clone;
+
+  &:hover {
+    filter: brightness(1.05);
+    -webkit-filter: brightness(1.05);
+  }
+}

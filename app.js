@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const exphbs  = require('express-handlebars');
 
 const routes = require('./routes/index');
+const annotations = require('./routes/annotation');
 const cards = require('./routes/card');
 const stories = require('./routes/story');
 
@@ -35,6 +36,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/annotations', annotations);
 app.use('/cards', cards);
 app.use('/stories', stories);
 

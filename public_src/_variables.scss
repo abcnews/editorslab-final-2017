@@ -1,10 +1,12 @@
 $rem: 16px;
 
-$color-blue: #D1F0F7;
-$color-black: #333;
-$color-grey: #3C4447;
-$color-lightgrey: #C2CACC;
 $color-white: #FFF;
+$color-black: #333;
+$color-lightgrey: #C2CACC;
+$color-grey: #3C4447;
+$color-grey-transparent: rgba(60, 68, 71, .95);
+$color-lightblue: #D1F0F7;
+$color-blue: #A8E2EF;
 
 $url-fonts-root: './fonts/';
 $url-font-sans: '#{$url-fonts-root}abcsans';

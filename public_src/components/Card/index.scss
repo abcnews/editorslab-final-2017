@@ -44,8 +44,11 @@
       color: $color-lightgrey;
       font-style: italic;
 
-      &::before {
-        content: "✔︎ ";
+      &::after {
+        content: "✔︎";
+        animation: .25s pop;
+        display: inline-block;
+        margin-left: .5rem;
       }
     }
   }
