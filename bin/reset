@@ -1,6 +1,18 @@
 #!/usr/bin/env node
 var db = require('../lib/db');
 var {RESET} = require('../lib/db/statements');
+const fs = require('fs');
+const path = require('path');
+const jmm = require('json-meta-marked');
+
+function fetchExamples(type) {
+  let folder = path.join(__dirname, '..', 'lib','db',`example-${type}`);
+  return fs.readdirSync(folder).map(file => {
+    let parsed = jmm.parse(fs.readFileSync(path.join(folder, file), {encoding: 'utf-8'}));
+    parsed.slug = file.replace(/\..+$/,'');
+    return parsed;
+  })
+}
 
 db
 .then(conn => {
@@ -8,6 +20,12 @@ db
     if (err) {
       throw err;
     }
+    fetchExamples('stories').forEach(file => {
+      conn.run('INSERT INTO stories (slug, text) VALUES (?,?)', [file.slug, file.__content__]);
+    });
+    fetchExamples('cards').forEach(file => {
+      conn.run('INSERT INTO cards (slug, text, collapse, expand) VALUES (?,?,?,?)', [file.slug, file.__content__, file.collapse, file.expand]);
+    });
   });
 })
 .catch(err => {

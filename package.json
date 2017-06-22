@@ -19,6 +19,8 @@
     "express": "^4.13.3",
     "express-handlebars": "^3.0.0",
     "idb-keyval": "^2.3.0",
+    "json-meta-marked": "^1.5.1",
+    "marked": "^0.3.6",
     "morgan": "^1.6.1",
     "pify": "^3.0.0",
     "sanitize-html": "^1.14.1",
