@@ -5,7 +5,7 @@ const db = require('../lib/db');
 /* GET stories */
 router.get('/', (req, res, next) => {
   db.then(conn => {
-    conn.all('SELECT slug, text FROM stories', (err, stories) => {
+    conn.all('SELECT slug, text FROM stories ORDER BY slug', (err, stories) => {
       res.render('stories', {stories: stories});
     });
   }).catch(next);
