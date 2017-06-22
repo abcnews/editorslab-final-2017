@@ -18,10 +18,16 @@ function Card(data) {
       ${contentEl}
       <div class="Card-controls--expanded">
         <button onclick=${willCollapse.bind(null, data.slug)}>I've got this</button>
-        <a href="#">What does this do?</a>
+        <a href="#" onclick=${about}>What does this do?</a>
       </div>
       <div class="Card-controls--collapsed">
-        <button onclick=${expand.bind(null, data.slug)}>I need some background on this</button>
+        <button onclick=${expand.bind(null, data.slug)}>
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8">
+              <path fill="none" stroke="#FFF" stroke-linecap="square" stroke-width="2" d="M10 6L5.898 2 2 5.8"/>
+            </svg>
+          </span>
+          I need some background on this</button>
       </div>
     </div>
   `;
@@ -47,6 +53,11 @@ function willCollapse(slug) {
 function expand(slug) {
   idbKeyval.delete(`card-${slug}`);
   cards[slug].className = 'Card is-expanded';
+}
+
+function about(event) {
+  event.preventDefault();
+  alert('TODO');
 }
 
 module.exports = Card;

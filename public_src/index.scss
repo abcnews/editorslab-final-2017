@@ -17,6 +17,7 @@ body {
 }
 
 .u-richtext {
+  font-size: 1.125rem;
   font-family: $font-serif;
 
   > * {
@@ -26,6 +27,13 @@ body {
 
   > :last-child {
     margin-bottom: 0;
+  }
+
+  > h1,
+  > h2
+  > h3,
+  > h4 {
+    font-family: $font-sans;
   }
 }
 
