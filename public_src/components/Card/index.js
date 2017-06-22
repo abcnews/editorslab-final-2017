@@ -34,7 +34,7 @@ function Card(data, refEl) {
     <div class="Card is-collapsed">
       ${contentEl}
       <div class="Card-controls--expanded">
-        <button onclick=${willCollapse}>I've got this</button>
+        <button onclick=${willCollapse}>${data.collapse || 'I\'ve got this'}</button>
         <a href="#" onclick=${about}>What does this do?</a>
       </div>
       <div class="Card-controls--collapsed">
@@ -44,7 +44,7 @@ function Card(data, refEl) {
               <path fill="none" stroke="#FFF" stroke-linecap="square" stroke-width="2" d="M10 6L5.898 2 2 5.8"/>
             </svg>
           </span>
-          I need some background on this</button>
+          ${data.expand || 'I need some background on this'}</button>
       </div>
     </div>
   `;

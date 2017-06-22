@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
   const inSlugs = slugs.map(slug => `"${slug}"`).join();
   
   db.then(conn => {
-    conn.all(`SELECT slug, text FROM cards WHERE slug IN (${inSlugs})`, (err, cards) => {
+    conn.all(`SELECT slug, text, expand, collapse FROM cards WHERE slug IN (${inSlugs})`, (err, cards) => {
       res.json(cards);
     });
   }).catch(next);

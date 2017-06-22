@@ -21,7 +21,9 @@ function Annotation(data, refEl) {
   function close() {
     el.classList.add('is-closing');
     setTimeout(() => {
-      el.parentElement.removeChild(el);
+      if (el.parentElement) {
+        el.parentElement.removeChild(el);
+      }
       document.documentElement.classList.remove('has-annotation');
     }, 250);
   }

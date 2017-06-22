@@ -84,13 +84,12 @@ html.has-annotation body {
   font-weight: normal;
   font-style: normal;
   cursor: pointer;
-  transition: filter .125s, -webkit-filter .125s;
+  transition: .25s background-color;
   -webkit-box-decoration-break: clone;
   -o-box-decoration-break: clone;
   box-decoration-break: clone;
 
   &:hover {
-    filter: brightness(1.05);
-    -webkit-filter: brightness(1.05);
+    background-color: $color-blue;
   }
 }
