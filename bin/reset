@@ -1,6 +1,17 @@
 #!/usr/bin/env node
 var db = require('../lib/db');
 var {RESET} = require('../lib/db/statements');
+const fs = require('fs');
+const path = require('path');
+const marked = require('marked');
+
+function fetchExamples() {
+  let folder = path.join(__dirname, '..', 'lib','db','example-stories');
+  return fs.readdirSync(folder).map(file => ({
+    slug: file.replace(/\..+$/,''),
+    content: fs.readFileSync(path.join(folder, file))
+  }))
+}
 
 db
 .then(conn => {
@@ -8,6 +19,9 @@ db
     if (err) {
       throw err;
     }
+    fetchExamples().forEach(file => {
+      conn.run('INSERT INTO stories (slug, text) VALUES (?,?)', [file.slug, file.content]);
+    });
   });
 })
 .catch(err => {
