@@ -1,4 +1,5 @@
 Uber CEO Travis Kalanick resigns after pressure from key investors
+==================================================================
 
 Uber chief executive and co-founder Travis Kalanick has resigned from the troubled ride-booking service under pressure from investors.
 
