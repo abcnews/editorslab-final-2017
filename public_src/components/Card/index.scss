@@ -15,6 +15,10 @@
   }
 }
 
+.Card-awareness {
+  padding-left: 1rem;
+}
+
 .Card-content {
   border-left: .125rem solid $color-grey;
   padding: 0 0 .375rem .875rem;
@@ -99,4 +103,9 @@
       }
     }
   }
+}
+
+.Card.is-collapsed [data-unaware],
+.Card.is-expanded [data-aware] {
+  display: none;
 }

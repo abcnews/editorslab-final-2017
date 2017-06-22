@@ -2,6 +2,8 @@ const html = require('bel');
 const idbKeyval = require('idb-keyval');
 const sanitizeHtml = require('sanitize-html');
 
+const slice = arr => Array.prototype.slice.call(arr);
+
 const SANITIZE_HTML_CONFIG = {
   allowedTags: sanitizeHtml.defaults.allowedTags.concat(['h1', 'h2', 'img'])
 };
@@ -26,12 +28,19 @@ function Card(data, refEl) {
     el.className = 'Card is-expanded';
   }
 
+  const awarenessEl = html`<div class="Card-awareness u-richtext"></div>`;
+
+  slice(refEl.children).reverse().forEach(node => {
+    awarenessEl.insertBefore(node, awarenessEl.firstChild);
+  });
+
   const contentEl = html`<div class="Card-content u-richtext"></div>`;
 
   contentEl.innerHTML = sanitizeHtml(data.text, SANITIZE_HTML_CONFIG);
 
   el = html`
     <div class="Card is-collapsed">
+      ${awarenessEl}
       ${contentEl}
       <div class="Card-controls--expanded">
         <button onclick=${willCollapse}>${data.collapse || 'I\'ve got this'}</button>
@@ -55,7 +64,7 @@ function Card(data, refEl) {
     }
   });
 
-  refEl.parentElement.insertBefore(el, refEl);
+  refEl.parentElement.insertBefore(el, refEl.nextSibling);
 }
 
 module.exports = Card;
