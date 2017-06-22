@@ -4,7 +4,7 @@
 
   button {
     border: none;
-    padding: .5625rem .5625rem .5625rem .4375rem;
+    padding: .5625rem;
     background-color: $color-grey;
     color: $color-white;
     font-size: .75rem;
@@ -12,10 +12,6 @@
     line-height: 1;
     text-transform: uppercase;
     cursor: pointer;
-
-    > svg {
-      margin-right: .5rem;
-    }
   }
 }
 
@@ -85,7 +81,7 @@
 
   button {
     position: relative;
-    padding: .4375rem .4375rem .4375rem 2.4375rem;
+    padding: .4375rem .4375rem .4375rem 2rem;
     background-color: $color-lighterblue;
     color: $color-grey;
     font-size: .875rem;
