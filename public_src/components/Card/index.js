@@ -1,17 +1,13 @@
 const html = require('bel');
 const idbKeyval = require('idb-keyval');
 const sanitizeHtml = require('sanitize-html');
+const Annotation = require('../Annotation');
 
 const slice = arr => Array.prototype.slice.call(arr);
 
 const SANITIZE_HTML_CONFIG = {
   allowedTags: sanitizeHtml.defaults.allowedTags.concat(['h1', 'h2', 'img'])
 };
-
-function about(event) {
-  event.preventDefault();
-  alert('TODO');
-}
 
 function Card(data, refEl) {
   let el;
@@ -38,13 +34,17 @@ function Card(data, refEl) {
 
   contentEl.innerHTML = sanitizeHtml(data.text, SANITIZE_HTML_CONFIG);
 
+  const aboutEl = html`<a>What does this do?</a>`;
+
+  Annotation(null, aboutEl);
+
   el = html`
     <div class="Card is-collapsed">
       ${awarenessEl}
       ${contentEl}
       <div class="Card-controls--expanded">
         <button onclick=${willCollapse}>${data.collapse || 'I\'ve got this'}</button>
-        <a href="#" onclick=${about}>What does this do?</a>
+        ${aboutEl}
       </div>
       <div class="Card-controls--collapsed">
         <button onclick=${expand}>

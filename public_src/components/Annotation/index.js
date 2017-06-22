@@ -2,15 +2,21 @@ const html = require('bel');
 const idbKeyval = require('idb-keyval');
 const sanitizeHtml = require('sanitize-html');
 
+const ABOUT_CONTENT = `
+  <h2> What is <em>Manifest</em>?</h2>
+  <p>TODO</p>
+`;
 const SANITIZE_HTML_CONFIG = {
   allowedTags: sanitizeHtml.defaults.allowedTags.concat(['h1', 'h2', 'img'])
 };
 const NOOP = () => {};
 
-const annotations = {};
-
 function Annotation(data, refEl) {
   let el;
+
+  function enable() {
+    refEl.onclick = open;
+  }
 
   function open() {
     el.classList.remove('is-closing');
@@ -41,15 +47,15 @@ function Annotation(data, refEl) {
 
   const contentEl = html`<div class="Annotation-content u-richtext"></div>`;
 
-  contentEl.innerHTML = sanitizeHtml(data.text, SANITIZE_HTML_CONFIG);
+  contentEl.innerHTML = data ? sanitizeHtml(data.text, SANITIZE_HTML_CONFIG) : ABOUT_CONTENT;
 
   el = html`
     <div class="Annotation" onclick=${close}>
       <div class="Annotation-container" onclick=${event => event.stopPropagation()}>
         ${contentEl}
         <div class="Annotation-controls">
-          <button class="Annotation-controls-remove" onclick=${destroy}>OK. I don’t need to see this again</button>
-          <button class="Annotation-controls-close" onclick=${close}>Close this but keep the annotation</button>
+          ${data ? html`<button class="Annotation-controls-remove" onclick=${destroy}>OK. I don’t need to see this again</button>` : null}
+          <button class="Annotation-controls-close" onclick=${close}>${data ? 'Close this but keep the annotation' : 'OK'}</button>
         </div>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" onclick=${close}>
@@ -60,13 +66,17 @@ function Annotation(data, refEl) {
     </div>
   `;
 
-  idbKeyval.get(`annotation-${data.slug}`).then(value => {
-    if (value) {
-      removeHighlight();
-    } else {
-      refEl.onclick = open;
-    }
-  });
+  if (data) {
+    idbKeyval.get(`annotation-${data.slug}`).then(value => {
+      if (value) {
+        removeHighlight();
+      } else {
+        enable();
+      }
+    });
+  } else {
+    enable();
+  }
 }
 
 module.exports = Annotation;

@@ -28,7 +28,12 @@ body {
   }
 
   > h1,
-  > h2
+  > h2 {
+    line-height: 1.25;
+  }
+
+  > h1,
+  > h2,
   > h3,
   > h4 {
     font-family: $font-sans;

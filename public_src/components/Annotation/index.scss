@@ -34,6 +34,7 @@ html.has-annotation body {
 .Annotation-container {
   margin: 0 auto;
   padding: 1rem;
+  width: 100%;
   max-width: 25rem;
 }
 
@@ -53,7 +54,7 @@ html.has-annotation body {
 
   button {
     border: none;
-    margin-top: .5rem;
+    margin-top: .75rem;
     padding: .875rem;
     width: 100%;
     background-color: $color-blue;
