@@ -7,6 +7,7 @@
   "scripts": {
     "reset": "node ./bin/reset",
     "start": "node ./bin/www",
+    "install": "node ./bin/reset && ./node_modules/gulp/bin/gulp.js build",
     "test": "mocha --recursive test",
     "test:coverage": "nyc npm test",
     "test:unit": "mocha --recursive test/middleware test/models test/routes",

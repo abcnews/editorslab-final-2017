@@ -54,6 +54,10 @@ gulp.task('develop', function () {
   });
 });
 
+gulp.task('build', [
+  'sass','js'
+]);
+
 gulp.task('default', [
   'sass',
   'js',
