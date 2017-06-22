@@ -1,11 +1,4 @@
----
-{
-  "collapse": "null",
-  "expand": "null"
-}
----
-
-Waymo, the Alphabet owned company building self-driving cars, has begun legal proceedings against Uber and its subsidiary, Otto, which it alleges the company's self-driving car technology was stolen in what it calls a "calculated theft."
+Waymo, the <a data-annotation="alphabet">Alphabet</a> owned company building self-driving cars, has begun legal proceedings against Uber and its subsidiary, Otto, which it alleges the company's self-driving car technology was stolen in what it calls a "calculated theft."
 
 The law suit alleges that Anthony Levandowski, a former employee of Waymo, took the company's trade secrets before leaving to start his own autonomous vehicle company, Otto. Otto was subsequently acquired by Uber.
 
