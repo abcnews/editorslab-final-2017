@@ -60,13 +60,15 @@ html.has-annotation body {
     background-color: $color-blue;
     color: $color-grey;
     font-size: .875rem;
-    font-weight: bold;
+    font-weight: 600;
     line-height: 1;
     cursor: pointer;
   }
 
   button + button {
-    background-color: $color-lightgrey;
+    border: .1875rem solid $color-lightgrey;
+    background-color: transparent;
+    color: $color-lightgrey;
   }
 }
 
@@ -91,6 +93,6 @@ html.has-annotation body {
   box-decoration-break: clone;
 
   &:hover {
-    background-color: $color-blue;
+    background-color: $color-lighterblue;
   }
 }
